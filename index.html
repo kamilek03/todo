@@ -1,49 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="main.css">
-    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
 </head>
+
 <body>
+  <header class="shake"><h1>Lista rzeczy do zrobienia</h1></header>
+  <div class="input-box">
+    <input type="text" class="todo-input" placeholder="Wpisz tutaj co masz zrobić...">
+    <button class="todo-button btn"><i class="fas fa-plus-square"></i></button>
+  </div>
+  <div class="todos">
+    <ul class="todo-list">
+      
+    </ul>
+  </div>
 
-    <div class="container-lg">
-        <div class="row">
-            <div class="col-sm">
-            </div>
-            <div class="col-sm">
 
-            </div>
-            <div class="col-sm">  
-                <div class="form-group mt-5 flex">
-                    <h3 class="text-center mt-2 mb-3" >Hej Alusia!</h3>
-                    <label for="exampleFormControlTextarea1" class="text-center">Co chcesz dziś zrobić?</label>
-                    <textarea class="form-control mt-2" id="todo" rows="2" placeholder="Wpisz tutaj jeden plan..." maxlength="40"></textarea>
-                    <button type="button" id="wyslij" class="btn btn-success mt-3">Wyślij</button>
-                </div>
-            </div>
-            <div class="col-sm">
-            </div>
-            <div class="col-sm">
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm">
-            </div>
-            <div class="col-sm">
-                <div class="lista mt-4" id="lista">
-                    
-                </div>
-            </div>
-            <div class="col-sm">
-            </div>
-        </div>
-    </div>
-
-    <footer id="footer"></footer>
-<script src="app.js"></script>
+  <script src="main.js"></script>
 </body>
 </html>
