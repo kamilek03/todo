@@ -6,17 +6,13 @@ body {
   flex-direction: column;
   justify-content: flex-start;
   min-height: 100vh;
-  background: #36c406;
+  background: #32cb00;
   align-items: center;
   color: #fff;
 }
 
 header {
   margin-top: 15%;
-}
-
-h1 {
-  text-align: center;
 }
 
 .btn {
@@ -35,7 +31,8 @@ h1 {
 }
 
 .todo-input,
-.todo-button {
+.todo-button,
+.hour-input {
   border: none;
   background: #fff;
   color: #32cb00;
@@ -45,6 +42,13 @@ h1 {
   width: 250px;
   padding: 15px;
   color: #000;
+}
+
+.hour-input {
+  width: 70px;
+  padding: 15px;
+  color: #000;
+  margin: 0.5rem;
 }
 
 .todo-button {
@@ -115,4 +119,38 @@ h1 {
 .fall-animation {
   transform: translateY(8rem) rotateZ(20deg);
   opacity: 0;
+}
+
+.exl {
+  color: rgb(255, 196, 0);
+}
+
+.exl:hover {
+  background: rgb(255, 196, 0);
+  color: #fff;
+}
+
+.yellow {
+  background: rgb(255, 196, 0);
+  color: #fff;
+}
+
+.del{
+  display: none;
+}
+
+#btn {
+  width: 120px;
+  height: 40px;
+  background: white;
+  font-size: 0.8rem;
+  margin: 1rem;
+  border: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+#btn:hover {
+  background: #32cb00;
+  color: #fff;
 }

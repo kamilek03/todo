@@ -1,7 +1,9 @@
 //catch 
 const button = document.querySelector('.todo-button');
 const todo = document.querySelector('.todo-list');
+const exl = document.querySelector('.exl');
 const body = document.body;
+const but = document.getElementById('btn')
 
 
 
@@ -10,7 +12,7 @@ document.addEventListener("DOMContentLoaded", getTodos);
 body.addEventListener('keydown', checkEnter);
 button.addEventListener('click', createTodo);
 todo.addEventListener('click', checkDeleteTodo);
-
+but.addEventListener('click', todayTodos);
 
 //functions 
 
@@ -19,6 +21,7 @@ function createTodo(e) {
   const todoMainDiv = document.querySelector('.todos');
   const todoUl = document.querySelector('.todo-list');
   if(input.value == "") return;
+
   
   const todoDiv = document.createElement('div');
   const newTodo = document.createElement('li');
@@ -32,8 +35,9 @@ function createTodo(e) {
   checkButton.classList.add('btn');
   deleteButton.classList.add('btn');
 
+  
   newTodo.innerText = input.value;
-  saveTodos(input.value);
+  saveTodos(newTodo.textContent);
   checkButton.innerHTML = '<i class="fas fa-check">';
   deleteButton.innerHTML = '<i class="fas fa-times">';
 
@@ -42,7 +46,6 @@ function createTodo(e) {
   todoDiv.appendChild(checkButton);
   todoDiv.appendChild(deleteButton);
   input.value = "";
-
 };
 
 function checkEnter(e){
@@ -54,7 +57,7 @@ function checkDeleteTodo(e) {
   const grab = e.target;
   const todo = grab.parentElement;
 
-  console.log(grab);
+
 
   if(grab.classList[0] === "deleted") {
     todo.classList.add('fall-animation');
@@ -128,4 +131,29 @@ function removeTodos(todo) {
   const todoIndex = todo.children[0].innerText;
   todos.splice(todos.indexOf(todoIndex),1);
   localStorage.setItem('todos', JSON.stringify(todos));
+}
+
+function todayTodos() {
+  let todos = document.querySelectorAll('.todo')
+  let date = new Date();
+  let day = date.getDate();
+  let myArray = Array.from(todos);
+
+  myArray.forEach(function(element){
+    if(element.classList[1] === "del") {
+      element.classList.remove('del');
+      console.log(element);
+    }
+    else if(parseInt(element.childNodes[0].textContent) !== day)
+    {
+      element.classList.add('del');
+    }
+  });
+
+  
+  /*if(parseInt(todo) !== day)
+  {
+    console.log(day);
+    todoDiv.classList.add("del");
+  }*/
 }
