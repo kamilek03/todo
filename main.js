@@ -142,11 +142,12 @@ function todayTodos() {
   myArray.forEach(function(element){
     if(element.classList[1] === "del") {
       element.classList.remove('del');
-      console.log(element);
+      but.innerText = "Na dziś";
     }
     else if(parseInt(element.childNodes[0].textContent) !== day)
     {
       element.classList.add('del');
+      but.innerText = "Ogólne";
     }
   });
 
